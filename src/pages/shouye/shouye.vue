@@ -1,17 +1,20 @@
 <template>
   <div>
      <v-Tou></v-Tou>
-     <v-state></v-state>
+     <v-State></v-State>
+     <v-Swiper></v-Swiper>
   </div> 
 </template>
 <script>
 import Tou from './component/tou'
 import State from './component/state'
+import Swiper from './component/swiper'
 export default {
   name: "shouye",
   components:{
    'v-Tou': Tou,
-   'v-state':State
+   'v-State': State,
+   'v-Swiper': Swiper
   }
 };
 </script>

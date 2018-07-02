@@ -2,7 +2,7 @@
   <div>
       <div class="nav">
           <div class="nav-left">
-            <span class="iconfont">&#xe639;</span>
+            <span class="iconfont" @click="handelClick">&#xe639;</span>
           </div>
           <div class="nav-logo">
             <img class="logo" src="static\images\车质尚LOGO@2x.png"/>
@@ -15,7 +15,12 @@
 </template>
 <script>
 export default {
-  name: "state"
+  name: "state",
+  methods:{
+       handelClick () {
+          
+       }
+  }
 };
 </script>
 <!-- Add "scoped" attribute to limit CSS to this component only -->

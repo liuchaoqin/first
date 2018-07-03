@@ -2,7 +2,14 @@
   <div>
       <div class="nav">
           <div class="nav-left">
-            <span class="iconfont" @click="handelClick">&#xe639;</span>
+            <span class="iconfont" @click="handleclick">&#xe639;</span>
+            <ul class="nav-list" v-if="show">
+              <li>首页</li>
+              <li>关于我们</li>
+              <li>十大优势</li>
+              <li>车主专享</li>
+              <li>匠心订制</li>
+            </ul>
           </div>
           <div class="nav-logo">
             <img class="logo" src="static\images\车质尚LOGO@2x.png"/>
@@ -16,10 +23,16 @@
 <script>
 export default {
   name: "state",
+  data(){
+    return{
+      show: false
+    }
+    
+  },
   methods:{
-       handelClick () {
-          
-       }
+    handleclick(){
+      this.show=true;
+    }
   }
 };
 </script>
@@ -37,6 +50,21 @@ export default {
     .iconfont
       display : block
       text-align: center
+    .nav-list
+      position :absolute
+      left :0
+      top:1.28rem
+      width :1.7rem
+      height :2rem
+      background-color :#fff
+      z-index :9
+      li
+        height :.39rem
+        line-height :.39rem
+        border-bottom :0.01rem solid gray
+        color :gray
+        font-size :.14rem 
+        text-align :center
   .nav-logo
     width :5.3rem
     .logo

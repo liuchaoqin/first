@@ -1,7 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import shouye from '@/pages/shouye/shouye'
-
 Vue.use(Router)
 
 export default new Router({

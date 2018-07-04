@@ -5,11 +5,11 @@
           <div class="type-top">
               <img class="car" :src="typeimg"/>
               <p class="title">{{title}}</p>
-              <p class="more">{{more}}</p>
+              <p class="more" v-show="!isShowAll" @click="showAll">{{more}}</p>
           </div>
           <!-- 车型展示部分 -->
           <ul class="type-display">
-              <li class="car-img" v-for="item of carList" :key='item.id'>
+              <li class="car-img" v-for="(item,index) of imgList" :key='index'>
                   <img class="car-type" :src="item.imgurl"/>
                   <p class="img-intro">{{item.imgintro}}</p>
               </li>
@@ -51,8 +51,31 @@ export default {
              id:'6',
              imgurl:'static/images/3.png',
              imgintro:'111111'
-         }]
-      }  
+         },
+         { 
+             id:'7',
+             imgurl:'static/images/3.png',
+             imgintro:'111111'
+         },{
+             id:'8',
+             imgurl:'static/images/3.png',
+             imgintro:'111111'
+         }],
+         isShowAll:false
+      }
+  },
+  computed:{
+      imgList(){
+        if(!this.isShowAll){
+            return this.carList.slice(0,4)
+        }
+        return this.carList;
+      }
+  },
+  methods:{
+      showAll(){
+          this.isShowAll = true;
+      }
   }
 };
 </script>
